@@ -1,0 +1,25 @@
+body {
+    font-family: Arial;
+    margin: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid rgb(224, 29, 29);
+    padding: 10px;
+    text-align: center;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: rgb(0, 26, 128);
+    color: rgb(18, 1, 1);
+    border: none;
+    cursor: pointer;
+}

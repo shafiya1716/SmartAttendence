@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Attendance Management</h2>
+
+<label>Choose Class:</label>
+<select id="classSelect">
+    <option value="A">Class A</option>
+    <option value="B">Class B</option>
+    <option value="C">Class C</option>
+</select>
+
+<label>Select Date:</label>
+<input type="date" id="date">
+
+<table id="studentsTable">
+    <thead>
+        <tr>
+            <th>Reg No</th>
+            <th>Name</th>
+            <th>Present</th>
+        </tr>
+    </thead>
+    <tbody id="studentBody"></tbody>
+</table>
+
+<button id="submitBtn">Submit Attendance</button>
+
+<script src="script.js"></script>
+</body>
+</html>
