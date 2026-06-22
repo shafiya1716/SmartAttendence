@@ -4,7 +4,6 @@ const classes = {
     C: ["Meera", "Yash", "Ananya", "Rahul", "Shreya"]
 };
 
-// Load students when class changes
 function loadStudents() {
     let cls = document.getElementById("classSelect").value;
     let tbody = document.getElementById("studentBody");
@@ -50,4 +49,40 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
 
     let result = await res.json();
     alert(result.message);
+});
+
+document.getElementById("viewRecordsBtn").addEventListener("click", async () => {
+    let container = document.getElementById("attendanceRecords");
+    let list = document.getElementById("recordsList");
+
+    let res = await fetch("/attendance");
+    let records = await res.json();
+
+    if (records.length === 0) {
+        list.innerHTML = "<p>No attendance records found.</p>";
+        container.style.display = "block";
+        return;
+    }
+
+    let html = "";
+    records.slice().reverse().forEach(rec => {
+        let present = rec.attendance.filter(s => s.present).length;
+        let total = rec.attendance.length;
+        let absent = total - present;
+
+        html += `<div class="record-item">
+            <div class="record-date">${rec.date}</div>
+            <div class="record-class">Class ${rec.class} | Present: ${present}/${total} (Absent: ${absent})</div>
+            <div>`;
+
+        rec.attendance.forEach(s => {
+            let status = s.present ? "present" : "absent";
+            html += `<span class="record-student student-${status}">${s.name}</span>`;
+        });
+
+        html += `</div></div>`;
+    });
+
+    list.innerHTML = html;
+    container.style.display = "block";
 });

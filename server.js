@@ -8,7 +8,7 @@ const app = express();
 // Middlewares
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use(express.static("data/public"));
 
 // File path
 const filePath = "./data/attendance.json";

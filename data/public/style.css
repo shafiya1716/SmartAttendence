@@ -1,25 +1,141 @@
 body {
-    font-family: Arial;
-    margin: 25px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 0 20px;
+    background: #f5f7fa;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #444;
+}
+
+select, input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+th {
+    background: #1a237e;
+    color: white;
+    font-weight: 600;
 }
 
 th, td {
-    border: 1px solid rgb(224, 29, 29);
-    padding: 10px;
+    padding: 12px;
     text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background: #f0f4ff;
 }
 
 button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: rgb(0, 26, 128);
-    color: rgb(18, 1, 1);
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #1a237e;
+    color: white;
     border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #283593;
+}
+
+.att {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#attendanceRecords {
+    margin-top: 40px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: none;
+}
+
+#attendanceRecords h3 {
+    color: #1a237e;
+    margin-top: 0;
+}
+
+#recordsList {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.record-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.record-date {
+    font-weight: 600;
+    color: #1a237e;
+}
+
+.record-class {
+    color: #666;
+    font-size: 13px;
+}
+
+.record-student {
+    display: inline-block;
+    margin: 3px 6px 3px 0;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.student-present {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.student-absent {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions button {
+    flex: 1;
 }
